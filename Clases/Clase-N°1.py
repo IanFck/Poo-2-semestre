@@ -26,6 +26,37 @@ print (f"El nombre del Humano es: {Humano2.nombre}, tiene el apellido: {Humano2.
 print (f"El nombre del Humano es: {Humano3.nombre}, tiene el apellido: {Humano3.apellido}, y su edad es: {Humano3.edad}")
 
 
-# Llamana de los metodos 
+#Llamana de los metodos 
 Humano1.correr
-Humano2.dormir
+Humano2.dormir  
+
+#Nueva Clase Automovil
+class Automovil():
+    #Atributos
+    def __init__(self, marca, modelo, anio, color):
+        self.marca = marca
+        self.modelo = modelo
+        self.anio = anio
+        self.color = color 
+
+#Metodos de la clase Automovil
+    def arrancar (self):
+        print(f" El {self.marca} {self.modelo} esta arrancando")
+
+    def frenar (self):
+        print(f" El {self.marca} {self.modelo} esta frenando")
+
+    def acelerar(self):
+        print(f" El {self.marca} {self.modelo} esta acelerando")
+
+#Creando objetos
+Chevrolet = Automovil("Chevrolet", "Camaro", 2013, "Amarillo")
+Audi = Automovil("Audi", "F1", 2026, "Plateado")
+Ford = Automovil("Ford", "Mustang", 2015, "Azul")
+
+print (f"El auto 1 es un {Chevrolet.marca}, con {Chevrolet.modelo}, {Chevrolet.anio} y {Chevrolet.color}")
+
+Chevrolet.arrancar()
+Chevrolet.frenar()
+Chevrolet.acelerar()
+
