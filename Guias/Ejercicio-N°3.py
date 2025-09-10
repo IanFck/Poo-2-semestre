@@ -51,4 +51,47 @@ class Inventario ():
     def __init__(self):
         self.productos = {}
 
+    def agregar_productos (self, producto):
+        if producto.SKU in self.productos:
+            print("El producto ya existe. Actualizando stock en vez de agregar.")
+            self.productos[producto.SKU].stock(producto.cantidad_disponible)
+        else:
+            self.productos[producto.SKU] = producto
+
+    def actualizar_stock(self, SKU, cambio):
+        if SKU in self.productos:
+            self.productos[SKU].stock(cambio)
+        else:
+            print("Producto no encontrado en el inventario")
+
+    def mostrar_productos(self):
+        for producto in self.productos.values():
+            print(producto)
+
+    def valor_total_inventario(self):
+        total = 0
+        for producto in self.productos.values():
+            total += producto.valor_total() 
+        return total
     
+Producto1 = Producto("Laptop", 1200, 5, "A001")
+Producto2 = Producto("Mouse", 25, 50, "B002")
+Producto3 = Producto("Teclado", 45, 30, "C003")
+
+inventario = Inventario()
+
+inventario.agregar_productos(Producto1)
+inventario.agregar_productos(Producto2)
+inventario.agregar_productos(Producto3)
+
+inventario.mostrar_productos()
+
+inventario.actualizar_stock("B002", 10)  
+inventario.actualizar_stock("A001", -2)  
+
+print("\n--- Después de actualizar stock ---")
+inventario.mostrar_productos()
+
+# Valor total del inventario
+print("\nValor total del inventario:", inventario.valor_total_inventario())
+
