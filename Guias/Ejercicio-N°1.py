@@ -33,7 +33,7 @@ Reserva4 = ReservaHostal("Valentina Pineda", 17, 30, 20)
 # Se debe eliminar un objeto ReservaHostal, además de imprimir un mensaje indicando que la reserva ha sido cancelada.
 print (F"La Reserva de: {Reserva2.nombre_del_cliente} ha sido cancelada")
 del Reserva2
-
+print ("-----------------------------------------------------------")
 #Aqui imprimimos nuestro datos 
 
 #Datos de la reserva 1

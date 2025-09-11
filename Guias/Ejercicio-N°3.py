@@ -71,7 +71,7 @@ class Inventario ():
     def valor_total_inventario(self):
         total = 0
         for producto in self.productos.values():
-            total += producto.valor_total() 
+            total += producto.valor() 
         return total
     
 Producto1 = Producto("Laptop", 1200, 5, "A001")
