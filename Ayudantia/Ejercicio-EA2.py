@@ -27,10 +27,9 @@ class Mesero (Trabajador):
 
 # 4. Clase AyudanteChefMesero (Herencia múltiple) - Debe heredar de Chef y Mesero. Constructor recibe: nombre, especialidad, seccion. - Debe sobrescribir tarea() combinando ambas funciones.
 class AyudanteChefMesero (Chef,Mesero):
-    def __init__(self, nombre, seccion, especialidad):
-            Chef.__init__(nombre, especialidad)
-            Mesero.__init__(seccion)
-            self.especialidad = especialidad
+    def __init__(self, nombre, especialidad, seccion):
+            super().__init__(nombre, especialidad)
+            self.seccion = seccion
 
     def tarea(self):
         return f"El {self.nombre} esta cocinando en la seccion {self.seccion} y tiene la especialidad de {self.especialidad}"
@@ -45,7 +44,7 @@ print(Primer_Chef.tarea())
 Primer_mesero = Mesero("Sofia", "Atención al cliente")
 print(Primer_mesero.tarea())
 
-Primer_ayudante = AyudanteChefMesero("Ian", "Platos especiales", "Maestro de Chef")
+Primer_ayudante = AyudanteChefMesero("Ian", "Maestro de Chef", "Platos")
 print(Primer_Trabajador.tarea())
 
 
